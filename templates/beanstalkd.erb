@@ -1,0 +1,14 @@
+# beanstalkd: Managed by puppet.
+#
+## Defaults for the beanstalkd init script, /etc/init.d/beanstalkd on
+## Debian systems.
+
+BEANSTALKD_LISTEN_ADDR=<%= @listen_addr %>
+BEANSTALKD_LISTEN_PORT=<%= @listen_port %>
+
+# You can use BEANSTALKD_EXTRA to pass additional options. See beanstalkd(1)
+# for a list of the available options. Uncomment the following line for
+# persistent job storage.
+<% if @enable_binlog -%>
+BEANSTALKD_EXTRA="-b <%= @binlog_directory -%>"
+<% end %>
