@@ -5,8 +5,8 @@
   "summary": "The beanstalkd module provides an interface for managing a beanstalkd package/service.",
   "license": "Apache 2.0",
   "source": "",
-  "project_page": null,
-  "issues_url": null,
+  "project_page": "https://github.com/cubiclelord/beanstalkd/",
+  "issues_url": "https://github.com/cubiclelord/beanstalkd/issues",
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
   ]

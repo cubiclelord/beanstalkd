@@ -8,8 +8,7 @@
     * [What beanstalkd affects](#what-beanstalkd-affects)
     * [Setup requirements](#setup-requirements)
     * [Beginning with beanstalkd](#beginning-with-beanstalkd)
-4. [Usage - Configuration options and additional functionality](#usage)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+4. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
 6. [Development - Guide for contributing to the module](#development)
 
@@ -19,59 +18,81 @@ This is a Puppet module to manage a Beanstalkd instance.
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+The Beanstalkd module handles installing, configuring, and running the Beanstalkd daemon.
 
 ## Setup
 
 ### What beanstalkd affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
+* beanstalkd package
+* beanstalkd configuration
+* beanstalkd service
 
 ### Beginning with beanstalkd
 
-The very basic steps needed for a user to get the module up and running.
+`include '::beanstalkd'` is enough to get you up and running. If you'd like to
+pass parameters, you can do something like this:
 
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
-
-## Usage
-
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
+```puppet
+class { '::beanstalkd':
+  listen_addr      => '0.0.0.0',
+  listen_port      => '11300',
+  enable_binlog    => true,
+  binlog_directory => '/var/lib/beanstalkd',
+}
+```
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+### Classes
+
+#### Public Classes
+
+* beanstalkd: Main class, includes all other classes
+
+#### Private Classes
+
+* beanstalkd::install: Handles the package installation
+* beanstalkd::config: Handles the configuration
+* beanstalkd::service: Handles the service
+
+### Parameters
+
+The following parameters are available:
+
+####`listen_addr`
+Which address to bind beanstalkd to. Defaults to '127.0.0.1'.
+
+####`listen_port`
+Which port to bind beanstalkd to. Defaults to '11300'.
+
+####`enable_binlog`
+Whether to enable binlogging. Defaults to false. Other value is true.
+
+####`binlog_directory`
+If binlogging is enabled, specify the directory that the beanstalkd binlog
+will log to. Defaults to '/var/lib/beanstalkd'.
+
+####`package_ensure`
+Whether the beanstalkd package is present, absent or set to a specific
+version. Defaults to 'present'. Other values are 'absent', or '1.9'
+
+####`service_ensure`
+Whether the beanstalkd service should be running. Defaults to 'running'.
+Other value is 'stopped'.
+
+####`service_enable`
+Whether the beanstalkd service should be enabled at boot. Defaults to
+true. Other value is false.
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+This module currently is tested using Ubuntu 14.04. It may work with other versions.
 
 ## Development
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
+Feel free to submit pull requests if you'd like to add additional platforms or features
 
-## Release Notes/Contributors/Etc **Optional**
+## Contributors
 
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You may also add any additional sections you feel are
-necessary or important to include here. Please use the `## ` header.
+This module was written by Jeremy Bowers <cubiclelord@gmail.com>
