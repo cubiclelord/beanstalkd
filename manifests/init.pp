@@ -20,7 +20,8 @@
 #
 # [*package_ensure*]
 #   Whether the beanstalkd package is present, absent or set to a specific
-#   version. Defaults to 'present'. Other values are 'absent', or '1.9'
+#   version. Defaults to 'present'. Other values are 'absent', or a specific
+#   version.
 #
 # [*service_ensure*]
 #   Whether the beanstalkd service should be running. Defaults to 'running'.

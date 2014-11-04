@@ -30,11 +30,11 @@ The Beanstalkd module handles installing, configuring, and running the Beanstalk
 
 ### Beginning with beanstalkd
 
-`include '::beanstalkd'` is enough to get you up and running. If you'd like to
+`include 'beanstalkd'` is enough to get you up and running. If you'd like to
 pass parameters, you can do something like this:
 
 ```puppet
-class { '::beanstalkd':
+class { 'beanstalkd':
   listen_addr      => '0.0.0.0',
   listen_port      => '11300',
   enable_binlog    => true,
@@ -75,7 +75,8 @@ will log to. Defaults to '/var/lib/beanstalkd'.
 
 ####`package_ensure`
 Whether the beanstalkd package is present, absent or set to a specific
-version. Defaults to 'present'. Other values are 'absent', or '1.9'
+version. Defaults to 'present'. Other values are 'absent', or a specific
+version.
 
 ####`service_ensure`
 Whether the beanstalkd service should be running. Defaults to 'running'.
@@ -87,7 +88,7 @@ true. Other value is false.
 
 ## Limitations
 
-This module currently is tested using Ubuntu 14.04. It may work with other versions.
+This module currently is tested using Ubuntu 14.04 & 12.04
 
 ## Development
 
