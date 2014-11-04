@@ -9,4 +9,10 @@ class beanstalkd::config inherits beanstalkd {
     content => template($config_template),
   }
   
+  file { $binlog_directory:
+    ensure => directory,
+    owner  => $user,
+    group  => $group,
+    mode   => '0644',
+  }
 }
