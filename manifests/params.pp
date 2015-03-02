@@ -30,7 +30,7 @@ class beanstalkd::params {
       $daemon_options    = true
 
       $config          = '/etc/sysconfig/beanstalkd'
-      $config_template = 'beanstalkd/beanstalkd.erb'
+      $config_template = 'beanstalkd/beanstalk_redhat.erb'
       $package_name    = 'beanstalkd'
       $user            = 'beanstalkd'
       $group           = 'beanstalkd'
@@ -39,5 +39,4 @@ class beanstalkd::params {
       fail("The ${module_name} module is not supported on a ${::operatingsystem} distribution.")
     }
   }
-
 }
