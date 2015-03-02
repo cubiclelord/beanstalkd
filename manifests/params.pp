@@ -25,9 +25,18 @@ class beanstalkd::params {
       $user            = 'beanstalkd'
       $group           = 'beanstalkd'
     }
+    'RedHat': {
+      $service_start_yes = true
+      $daemon_options    = true
+
+      $config          = '/etc/sysconfig/beanstalkd'
+      $config_template = 'beanstalkd/beanstalk_redhat.erb'
+      $package_name    = 'beanstalkd'
+      $user            = 'beanstalkd'
+      $group           = 'beanstalkd'
+    }
     default: {
       fail("The ${module_name} module is not supported on a ${::operatingsystem} distribution.")
     }
   }
-
 }
