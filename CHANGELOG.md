@@ -1,3 +1,6 @@
+##2015-03-08 - 0.2.0
+- Add Support for RHEL 6
+
 ##2014-11-05 - 0.1.2
 - Add Changelog
 - Manage custom binlog directory

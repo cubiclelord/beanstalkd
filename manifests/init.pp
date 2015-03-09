@@ -53,7 +53,7 @@
 #
 # === Copyright
 #
-# Copyright 2014 Jeremy Bowers, unless otherwise noted.
+# Copyright 2015 Jeremy Bowers, unless otherwise noted.
 #
 class beanstalkd (
   $listen_addr      = $beanstalkd::params::listen_addr,

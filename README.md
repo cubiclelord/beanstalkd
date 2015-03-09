@@ -93,6 +93,7 @@ This option only works in RedHat families.
 ## Limitations
 
 This module currently is tested using Ubuntu 14.04, 12.04 as well as CentOS 6.
+The EPEL module is required for RedHat families to install beanstalkd.
 
 ## Development
 
