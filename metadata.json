@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "author": "jbowers",
   "summary": "The beanstalkd module provides an interface for managing a beanstalkd package/service.",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "https://github.com/cubiclelord/beanstalkd",
   "project_page": "https://github.com/cubiclelord/beanstalkd/",
   "issues_url": "https://github.com/cubiclelord/beanstalkd/issues",
