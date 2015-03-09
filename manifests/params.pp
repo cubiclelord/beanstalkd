@@ -4,7 +4,6 @@ class beanstalkd::params {
   $listen_addr      = '127.0.0.1'
   $listen_port      = '11300'
   $enable_binlog    = false
-  $binlog_directory = '/var/lib/beanstalkd'
   $package_ensure   = 'present'
   $service_ensure   = 'running'
   $service_enable   = true
@@ -19,11 +18,20 @@ class beanstalkd::params {
         $service_start_yes = false
         $daemon_options    = false
       }
-      $config          = '/etc/default/beanstalkd'
-      $config_template = 'beanstalkd/beanstalkd.erb'
-      $package_name    = 'beanstalkd'
-      $user            = 'beanstalkd'
-      $group           = 'beanstalkd'
+      $binlog_directory = '/var/lib/beanstalkd'
+      $config           = '/etc/default/beanstalkd'
+      $config_template  = 'beanstalkd/beanstalk.debian.erb'
+      $package_name     = 'beanstalkd'
+      $user             = 'beanstalkd'
+      $group            = 'beanstalkd'
+    }
+    'RedHat': {
+      $binlog_directory = '/var/lib/beanstalkd/binlog'
+      $config           = '/etc/sysconfig/beanstalkd'
+      $config_template  = 'beanstalkd/beanstalkd.redhat.erb'
+      $package_name     = 'beanstalkd'
+      $user             = 'beanstalkd'
+      $group            = 'beanstalkd'
     }
     default: {
       fail("The ${module_name} module is not supported on a ${::operatingsystem} distribution.")

@@ -16,7 +16,8 @@
 #
 # [*binlog_directory*]
 #   If binlogging is enabled, specify the directory that the beanstalkd binlog
-#   will log to. Defaults to '/var/lib/beanstalkd'.
+#   will log to. Defaults to '/var/lib/beanstalkd' on Debian families and 
+#   '/var/lib/beanstalkd/binlog' on RedHat families.
 #
 # [*package_ensure*]
 #   Whether the beanstalkd package is present. Defaults to 'present'. Other 
@@ -29,6 +30,10 @@
 # [*service_enable*]
 #   Whether the beanstalkd service should be enabled at boot. Defaults to
 #   true. Other value is false.
+#
+# [*user*]
+#   User that the beanstalkd process runs as. Default is 'beanstalkd'.
+#   This option only works in RedHat families.
 #
 # === Examples
 #
@@ -58,6 +63,7 @@ class beanstalkd (
   $package_ensure   = $beanstalkd::params::package_ensure,
   $service_ensure   = $beanstalkd::params::service_ensure,
   $service_enable   = $beanstalkd::params::service_enable,
+  $user             = $beanstalkd::params::user,
 ) inherits beanstalkd::params {
 
   # Anchor this as per #8040 - this ensures that classes won't float off and
