@@ -20,7 +20,7 @@ class beanstalkd::params {
       }
       $binlog_directory = '/var/lib/beanstalkd'
       $config           = '/etc/default/beanstalkd'
-      $config_template  = 'beanstalkd/beanstalk.debian.erb'
+      $config_template  = 'beanstalkd/beanstalkd.debian.erb'
       $package_name     = 'beanstalkd'
       $user             = 'beanstalkd'
       $group            = 'beanstalkd'
