@@ -1,3 +1,6 @@
+##2015-03-25 - 0.2.1
+- Typo fixes
+
 ##2015-03-08 - 0.2.0
 - Add Support for RHEL 6
 
