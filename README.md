@@ -41,6 +41,14 @@ class { 'beanstalkd':
   binlog_directory => '/var/lib/beanstalkd',
 }
 ```
+Or, you can use the same options in hiera:
+```yaml
+---
+beanstalkd::listen_addr: '0.0.0.0'
+beanstalkd::listen_port: '11300'
+beanstalkd::enable_binlog: 'true'
+beanstalkd::binlog_directory: '/var/lib/beanstalkd'
+```
 
 ## Reference
 
@@ -89,6 +97,10 @@ true. Other value is false.
 ####`user`
 User that the beanstalkd process runs as. Default is 'beanstalkd'.
 This option only works in RedHat families.
+
+####`max_job_size`
+Maximum size in bytes that beanstalkd allows for a job. Defaults to '65535'.
+This option only works in RedHat famillies.
 
 ## Limitations
 
