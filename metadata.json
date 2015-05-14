@@ -1,6 +1,6 @@
 {
   "name": "jbowers-beanstalkd",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "jbowers",
   "summary": "The beanstalkd module provides an interface for managing a beanstalkd package/service.",
   "license": "Apache-2.0",

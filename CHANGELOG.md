@@ -1,3 +1,6 @@
+##2015-05-14 - 0.2.2
+- Add max_job_size option. Minor other fixes.
+
 ##2015-03-25 - 0.2.1
 - Typo fixes
 
