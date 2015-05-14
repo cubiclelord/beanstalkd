@@ -96,11 +96,9 @@ true. Other value is false.
 
 ####`user`
 User that the beanstalkd process runs as. Default is 'beanstalkd'.
-This option only works in RedHat families.
 
 ####`max_job_size`
 Maximum size in bytes that beanstalkd allows for a job. Defaults to '65535'.
-This option only works in RedHat famillies.
 
 ## Limitations
 
@@ -114,3 +112,8 @@ Feel free to submit pull requests if you'd like to add additional platforms or f
 ## Contributors
 
 This module was written by Jeremy Bowers <cubiclelord@gmail.com>
+
+Other contributions from:
+Mattias Geniar <m@ttias.be>
+Sobit Akhmedov <sobit.akhmedov@gmail.com>
+Andreas Feldmann
