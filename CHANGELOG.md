@@ -1,3 +1,6 @@
+##2015-05-19 - 0.2.3
+- Fix run as user under debian platforms
+
 ##2015-05-14 - 0.2.2
 - Add max_job_size option. Minor other fixes.
 
