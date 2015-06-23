@@ -38,6 +38,13 @@
 #   Maximum size in bytes that beanstalkd allows for a job. Defaults to
 #   '65535'.
 #
+# [*service_start_yes*]
+#   Start service at system boot. Defaults to false
+#
+# [*daemon_options*]
+#  Pass Options (e.g. listen_addr) to service. Defaults to false
+#
+#
 # === Examples
 #
 #  class { 'beanstalkd':
@@ -59,15 +66,18 @@
 # Copyright 2015 Jeremy Bowers, unless otherwise noted.
 #
 class beanstalkd (
-  $listen_addr      = $beanstalkd::params::listen_addr,
-  $listen_port      = $beanstalkd::params::listen_port,
-  $enable_binlog    = $beanstalkd::params::enable_binlog,
-  $binlog_directory = $beanstalkd::params::binlog_directory,
-  $package_ensure   = $beanstalkd::params::package_ensure,
-  $service_ensure   = $beanstalkd::params::service_ensure,
-  $service_enable   = $beanstalkd::params::service_enable,
-  $user             = $beanstalkd::params::user,
-  $max_job_size     = $beanstalkd::params::max_job_size,
+  $listen_addr        = $beanstalkd::params::listen_addr,
+  $listen_port        = $beanstalkd::params::listen_port,
+  $enable_binlog      = $beanstalkd::params::enable_binlog,
+  $binlog_directory   = $beanstalkd::params::binlog_directory,
+  $package_ensure     = $beanstalkd::params::package_ensure,
+  $service_ensure     = $beanstalkd::params::service_ensure,
+  $service_enable     = $beanstalkd::params::service_enable,
+  $user               = $beanstalkd::params::user,
+  $max_job_size       = $beanstalkd::params::max_job_size,
+  $service_start_yes  = $beanstalkd::params::service_start_yes,
+  $daemon_options     = $beanstalkd::params::daemon_options
+
 ) inherits beanstalkd::params {
 
   # Anchor this as per #8040 - this ensures that classes won't float off and
