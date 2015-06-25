@@ -11,11 +11,15 @@ class beanstalkd::params {
 
   case $::osfamily {
     'Debian': {
-      if $::operatingsystem == 'Ubuntu' and $::operatingsystemmajrelease == '12.04' and $service_ensure == 'running'
-      {
-        $service_start_yes  = true
-        $daemon_options     = true
-      } else {
+      if $::operatingsystem == 'Ubuntu' and $::operatingsystemmajrelease == '12.04' and $service_ensure == 'running' {
+        $service_start_yes = true
+        $daemon_options    = true
+      }
+      elsif $::operatingsystem == 'Debian' and $::operatingsystemmajrelease == '7' and $service_ensure == 'running' {
+        $service_start_yes = true
+        $daemon_options    = true
+      }
+      else {
         $service_start_yes = false
         $daemon_options    = false
       }

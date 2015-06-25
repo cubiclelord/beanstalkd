@@ -1,3 +1,6 @@
+##2015-06-25 - 0.2.4
+- Add support for Debian 7 "Wheezy"
+
 ##2015-05-19 - 0.2.3
 - Fix run as user under debian platforms
 
