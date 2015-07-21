@@ -12,6 +12,7 @@ class beanstalkd::params {
     $service_ensure   = undef
   }
   $service_enable   = true
+  $service_restart  = undef
   $max_job_size     = '65535'
 
   case $::osfamily {

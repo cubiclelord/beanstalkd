@@ -12,6 +12,7 @@ class beanstalkd::service inherits beanstalkd {
     enable     => $service_enable,
     hasstatus  => true,
     hasrestart => true,
+    restart    => $service_restart,
   }
 
 }
