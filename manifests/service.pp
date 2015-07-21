@@ -1,8 +1,10 @@
 #
 class beanstalkd::service inherits beanstalkd {
 
-  if ! ($service_ensure in [ 'running', 'stopped' ]) {
-    fail('service_ensure parameter must be running or stopped')
+  if ($service_manage == true) {
+    if ! ($service_ensure in [ 'running', 'stopped' ]) {
+      fail('service_ensure parameter must be running or stopped')
+    }
   }
 
   service { 'beanstalkd':
