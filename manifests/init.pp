@@ -23,6 +23,10 @@
 #   Whether the beanstalkd package is present. Defaults to 'present'. Other 
 #   values are 'latest', or a specific version.
 #
+# [*service_manage*]
+#   Whether the beanstalkd service should be managed by puppet. This allows
+#   service_ensure to be set to 'undef'.
+#
 # [*service_ensure*]
 #   Whether the beanstalkd service should be running. Defaults to 'running'.
 #   Other value is 'stopped'.
@@ -31,12 +35,19 @@
 #   Whether the beanstalkd service should be enabled at boot. Defaults to
 #   true. Other value is false.
 #
+# [*service_restart*]
+#   Gives the user the option to set service restart command to '/bin/true'
+#   if notifies should't restart the service.
+#
 # [*user*]
 #   User that the beanstalkd process runs as. Default is 'beanstalkd'.
 #
 # [*max_job_size*]
 #   Maximum size in bytes that beanstalkd allows for a job. Defaults to
 #   '65535'.
+#
+# [*fsync*]
+#   Set this for forcing fsync every n ms (0 for always). Defaults to off.
 #
 # === Examples
 #
