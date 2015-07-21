@@ -14,6 +14,7 @@ class beanstalkd::params {
   $service_enable   = true
   $service_restart  = undef
   $max_job_size     = '65535'
+  $fsync            = undef
 
   case $::osfamily {
     'Debian': {

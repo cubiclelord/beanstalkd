@@ -70,6 +70,7 @@ class beanstalkd (
   $service_restart  = $beanstalkd::params::service_restart,
   $user             = $beanstalkd::params::user,
   $max_job_size     = $beanstalkd::params::max_job_size,
+  $fsync            = $beanstalkd::params::fsync,
 ) inherits beanstalkd::params {
 
   # Anchor this as per #8040 - this ensures that classes won't float off and
