@@ -64,6 +64,7 @@ class beanstalkd (
   $enable_binlog    = $beanstalkd::params::enable_binlog,
   $binlog_directory = $beanstalkd::params::binlog_directory,
   $package_ensure   = $beanstalkd::params::package_ensure,
+  $service_manage   = $beanstalkd::params::service_manage,
   $service_ensure   = $beanstalkd::params::service_ensure,
   $service_enable   = $beanstalkd::params::service_enable,
   $user             = $beanstalkd::params::user,

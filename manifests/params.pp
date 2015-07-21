@@ -5,7 +5,12 @@ class beanstalkd::params {
   $listen_port      = '11300'
   $enable_binlog    = false
   $package_ensure   = 'present'
-  $service_ensure   = 'running'
+  $service_manage   = true
+  if ($beanstalkd::service_manage) {
+    $service_ensure   = 'running'
+  } else {
+    $service_ensure   = undef
+  }
   $service_enable   = true
   $max_job_size     = '65535'
 
