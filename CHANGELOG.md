@@ -1,3 +1,6 @@
+##2016-02-09 - 0.2.5
+- Add support for RHEL/Centos 7
+
 ##2015-06-25 - 0.2.4
 - Add support for Debian 7 "Wheezy"
 
