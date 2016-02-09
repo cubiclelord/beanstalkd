@@ -31,9 +31,19 @@ class beanstalkd::params {
       $group            = 'beanstalkd'
     }
     'RedHat': {
+      case $::operatingsystemmajrelease {
+        '5' or '6' : { 
+          $config_template  = 'beanstalkd/beanstalkd.redhat-6.erb'
+        }
+        '7' : {
+          $config_template  = 'beanstalkd/beanstalkd.redhat-7.erb'
+        }
+        default: {
+          fail("The ${module_name} module is not supported on ${::operatingsystem} ${::operatingsystemmajrelease}.")
+        }
+      }
       $binlog_directory = '/var/lib/beanstalkd/binlog'
       $config           = '/etc/sysconfig/beanstalkd'
-      $config_template  = 'beanstalkd/beanstalkd.redhat.erb'
       $package_name     = 'beanstalkd'
       $user             = 'beanstalkd'
       $group            = 'beanstalkd'
