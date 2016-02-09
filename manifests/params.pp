@@ -32,10 +32,10 @@ class beanstalkd::params {
     }
     'RedHat': {
       case $::operatingsystemmajrelease {
-        '5' or '6' : {
+        '5', '6': {
           $config_template  = 'beanstalkd/beanstalkd.redhat-6.erb'
         }
-        '7' : {
+        '7': {
           $config_template  = 'beanstalkd/beanstalkd.redhat-7.erb'
         }
         default: {
