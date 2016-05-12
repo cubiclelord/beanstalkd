@@ -19,9 +19,15 @@ class beanstalkd::params {
         $service_start_yes = true
         $daemon_options    = true
       }
+      elsif $::operatingsystem == 'Debian' and $::operatingsystemmajrelease == '8' and $service_ensure == 'running' {
+        $service_start_yes = true
+        $daemon_options    = false
+        $service_provider  = 'systemd'
+      }
       else {
         $service_start_yes = false
         $daemon_options    = false
+        $service_provider  = undef
       }
       $binlog_directory = '/var/lib/beanstalkd'
       $config           = '/etc/default/beanstalkd'
@@ -47,6 +53,7 @@ class beanstalkd::params {
       $package_name     = 'beanstalkd'
       $user             = 'beanstalkd'
       $group            = 'beanstalkd'
+      $service_provider = undef
     }
     default: {
       fail("The ${module_name} module is not supported on a ${::operatingsystem} distribution.")

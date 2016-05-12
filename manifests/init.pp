@@ -78,6 +78,7 @@ class beanstalkd (
   $package_ensure   = $beanstalkd::params::package_ensure,
   $service_ensure   = $beanstalkd::params::service_ensure,
   $service_enable   = $beanstalkd::params::service_enable,
+  $service_provider = $beanstalkd::params::service_provider,
   $user             = $beanstalkd::params::user,
   $max_job_size     = $beanstalkd::params::max_job_size,
 ) inherits beanstalkd::params {
