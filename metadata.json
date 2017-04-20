@@ -1,6 +1,6 @@
 {
   "name": "jbowers-beanstalkd",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "author": "jbowers",
   "summary": "The beanstalkd module provides an interface for managing a beanstalkd package/service.",
   "license": "Apache-2.0",
@@ -21,8 +21,9 @@
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [ 
-        "12.04", 
-        "14.04" 
+        "12.04",
+        "14.04",
+        "16.04"
       ]
     },
     {

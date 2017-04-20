@@ -1,3 +1,6 @@
+##2017-04-20 - 0.2.7
+- Add support for Ubuntu 16.04
+
 ##2016-02-09 - 0.2.6
 - Add support for RHEL/Centos 7
 
