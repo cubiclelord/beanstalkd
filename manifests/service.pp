@@ -8,6 +8,7 @@ class beanstalkd::service inherits beanstalkd {
   service { 'beanstalkd':
     ensure     => $service_ensure,
     enable     => $service_enable,
+    provider   => $service_provider,
     hasstatus  => true,
     hasrestart => true,
   }
