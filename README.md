@@ -20,6 +20,8 @@ This is a Puppet module to manage a Beanstalkd instance.
 
 The Beanstalkd module handles installing, configuring, and running the Beanstalkd daemon.
 
+If you are running this on a rhel based distro you need to make sure you have the epel repository set up. We have not included this as a hard dependency but you can easily add it using the epel module provided by stahnma (https://forge.puppet.com/stahnma/epel).
+
 ## Setup
 
 ### What beanstalkd affects
