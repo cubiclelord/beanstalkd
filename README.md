@@ -115,7 +115,7 @@ features.
 
 ## License
 ```
-Copyright 2015 Jeremy Bowers
+Copyright 2017 Jeremy Bowers
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -139,3 +139,4 @@ Other contributions from:
 - Sobit Akhmedov <sobit.akhmedov@gmail.com>
 - Andreas Feldmann <an.feldmann@googlemail.com>
 - Ted Wells <twells@nexcess.net>
+- Bryan Gwilliam 
