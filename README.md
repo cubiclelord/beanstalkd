@@ -81,7 +81,7 @@ Whether to enable binlogging. Defaults to false. Other value is true.
 
 ####`binlog_directory`
 If binlogging is enabled, specify the directory that the beanstalkd binlog
-will log to. Defaults to '/var/lib/beanstalkd' on Debian families and 
+will log to. Defaults to '/var/lib/beanstalkd' on Debian families and
 '/var/lib/beanstalkd/binlog' on RedHat families.
 
 ####`package_ensure`
@@ -105,7 +105,7 @@ Maximum size in bytes that beanstalkd allows for a job. Defaults to '65535'.
 ## Limitations
 
 This module currently is tested using Ubuntu 16.04, 14.04, 12.04 as well as CentOS 6, 7
-and Debian 7. The EPEL module is required for RedHat families to install 
+and Debian 7. The EPEL module is required for RedHat families to install
 beanstalkd.
 
 ## Development
@@ -115,7 +115,7 @@ features.
 
 ## License
 ```
-Copyright 2017 Jeremy Bowers
+Copyright 2018 Jeremy Bowers
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -139,4 +139,4 @@ Other contributions from:
 - Sobit Akhmedov <sobit.akhmedov@gmail.com>
 - Andreas Feldmann <an.feldmann@googlemail.com>
 - Ted Wells <twells@nexcess.net>
-- Bryan Gwilliam 
+- Bryan Gwilliam
