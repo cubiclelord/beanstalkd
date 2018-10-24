@@ -1,3 +1,6 @@
+##2018-10-22 - 0.2.9
+- Added support for Ubuntu 18.04
+
 ##2017-12-11 - 0.2.8
 - Removed hard dependency for stahnma/epel module
 
