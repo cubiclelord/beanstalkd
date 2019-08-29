@@ -1,3 +1,8 @@
+##2019-08-29 - 0.2.10
+- Removed support for Ubuntu 12.04 & 14.04, Debian 7
+- Added support for Debian 8 9 & 10, RHEL 8
+- Added support for stdlib6.x
+
 ##2018-10-22 - 0.2.9
 - Added support for Ubuntu 18.04
 
